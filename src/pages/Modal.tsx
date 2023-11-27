@@ -8,7 +8,7 @@ const Modal = () => {
 			<div className="relative h-full w-full min-h-screen bg-stone-100 p-4">
 				<div className="max-w-6xl mx-auto grid grid-cols-1 gap-4">
 					<Reader
-						bookUrl="/alice.epub"
+						bookUrl="alice.epub"
 						initialFontSize="110%"
 						modal={true}
 					/>
