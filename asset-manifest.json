@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-epubjs/static/css/main.3c428393.css",
-    "main.js": "/react-epubjs/static/js/main.51ec846d.js",
+    "main.js": "/react-epubjs/static/js/main.23f8ac45.js",
     "index.html": "/react-epubjs/index.html",
     "main.3c428393.css.map": "/react-epubjs/static/css/main.3c428393.css.map",
-    "main.51ec846d.js.map": "/react-epubjs/static/js/main.51ec846d.js.map"
+    "main.23f8ac45.js.map": "/react-epubjs/static/js/main.23f8ac45.js.map"
   },
   "entrypoints": [
     "static/css/main.3c428393.css",
-    "static/js/main.51ec846d.js"
+    "static/js/main.23f8ac45.js"
   ]
 }
