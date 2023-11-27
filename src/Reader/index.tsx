@@ -33,7 +33,6 @@ export const Reader = (props: IReaderProps) => {
 	useEffect(() => {
 		if (url) return;
 
-		console.log(props.bookUrl);
 		setUrl(props.bookUrl);
 
 		return () => {

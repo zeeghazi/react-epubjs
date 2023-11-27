@@ -5,10 +5,8 @@ import {
 	type ISearchItemStyle,
 } from "./style";
 
-import useSearch from "src/hooks/useSearchState";
-import useSidebar from "src/hooks/useSidebarState";
 import { SearchItemObject } from "src/hooks/useReaderState/useContentState";
-import { useReader } from "src/hooks/useReaderContext";
+import { useReader, useSearch, useSidebar } from "src/hooks/useReaderContext";
 
 type ISearchItemProps = {
 	item: SearchItemObject;
@@ -32,6 +30,8 @@ export const SearchItem: React.FC<ISearchItemProps> = ({
 		if (!rendition.current) return;
 		await rendition.current.display(item.href);
 
+		// to mark the text inside book view
+		// not fully functional
 		const win = document.querySelector("iframe")?.contentWindow;
 		if (win) {
 			const body = win.document.documentElement.querySelector("body");

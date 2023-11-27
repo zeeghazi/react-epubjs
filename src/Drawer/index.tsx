@@ -1,5 +1,5 @@
 // TableOfContents.tsx
-import React from "react";
+import React, { useEffect } from "react";
 
 import { DrawerStyle as defaultDrawerStyles, type IDrawerStyle } from "./style";
 import { TableOfContents } from "./TableOfContents";
