@@ -38,6 +38,7 @@
 	"devDependencies": {
 		"@types/html-to-text": "^9.0.4",
 		"@types/react": "^18.2.38",
+		"gh-pages": "^6.1.0",
 		"tailwindcss": "^3.3.5"
 	}
 }
