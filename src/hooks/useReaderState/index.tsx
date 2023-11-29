@@ -1,6 +1,6 @@
 // useReaderState.tsx
 
-import Epub, { Book, Contents, NavItem, Rendition } from "epubjs";
+import Epub, { Book, NavItem, Rendition } from "epubjs";
 import {
 	Dispatch,
 	MutableRefObject,

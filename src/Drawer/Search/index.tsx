@@ -1,9 +1,6 @@
 // TableOfContents.tsx
 import React, { useEffect, type KeyboardEventHandler } from "react";
-import {
-	ISearchStyle as defaultSearchStyles,
-	type ISearchStyle,
-} from "./style";
+import { SearchStyle as defaultSearchStyles, type ISearchStyle } from "./style";
 import { SearchItem } from "../../components/SearchItem";
 import { useContent, useReader, useSearch } from "src/hooks/useReaderContext";
 import { ContentList } from "src/hooks/useReaderState/useContentState";

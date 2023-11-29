@@ -4,6 +4,6 @@ export interface IBookmarksStyle {
   bookmarks: CSSProperties
 }
 
-export const IBookmarksStyle: IBookmarksStyle = {
+export const BookmarksStyle: IBookmarksStyle = {
   bookmarks: {},
 }

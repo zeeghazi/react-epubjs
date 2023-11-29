@@ -1,8 +1,6 @@
 // useReaderState.tsx
 
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { useBookState } from "./useBookState";
-import { convert } from "html-to-text";
+import { Dispatch, SetStateAction, useState } from "react";
 
 export type Content = {
 	href: string;

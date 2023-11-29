@@ -1,6 +1,6 @@
 import React from "react";
 import {
-	IBookmarksStyle as defaultBookmarksStyles,
+	BookmarksStyle as defaultBookmarksStyles,
 	type IBookmarksStyle,
 } from "./style";
 import { BookmarkItem } from "../../components/BookmarkItem";

@@ -10,7 +10,6 @@ import {
 	useReader,
 	useSidebar,
 } from "src/hooks/useReaderContext";
-import { IoCloseCircleOutline } from "react-icons/io5";
 import { PiTrashLight } from "react-icons/pi";
 
 type IAnnotationItemProps = {

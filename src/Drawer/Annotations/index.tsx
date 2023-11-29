@@ -1,6 +1,6 @@
 import React from "react";
 import {
-	IAnnotationsStyle as defaultAnnotationsStyles,
+	AnnotationsStyle as defaultAnnotationsStyles,
 	type IAnnotationsStyle,
 } from "./style";
 import { AnnotationItem } from "../../components/AnnotationItem";

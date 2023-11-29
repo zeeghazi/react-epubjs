@@ -4,6 +4,6 @@ export interface IAnnotationsStyle {
   annotations: CSSProperties
 }
 
-export const IAnnotationsStyle: IAnnotationsStyle = {
+export const AnnotationsStyle: IAnnotationsStyle = {
   annotations: {},
 }

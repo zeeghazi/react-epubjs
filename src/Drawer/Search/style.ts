@@ -4,6 +4,6 @@ export interface ISearchStyle {
   search: CSSProperties
 }
 
-export const ISearchStyle: ISearchStyle = {
+export const SearchStyle: ISearchStyle = {
   search: {},
 }
