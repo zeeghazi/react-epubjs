@@ -20,7 +20,8 @@ export type IReaderProps = {
 
 	showSidebar?: boolean;
 	showToolbar?: Boolean;
-	externalLink?: string;
+
+	external?: (() => void) | null;
 };
 
 export const Reader: React.FC<IReaderProps> = ({
@@ -31,7 +32,7 @@ export const Reader: React.FC<IReaderProps> = ({
 
 	showSidebar = true,
 	showToolbar = true,
-	externalLink = "",
+	external = null,
 }: IReaderProps) => {
 	const { url, setUrl, book, bookLocation } = useReader();
 
@@ -67,10 +68,10 @@ export const Reader: React.FC<IReaderProps> = ({
 				<div className="flex-grow border border-stone-300 rounded">
 					<div style={readerStyles.container}>
 						<div style={readerStyles.readerArea}>
-							{externalLink && (
+							{external && (
 								<GoLinkExternal
 									size={25}
-									onClick={() => alert("okay")}
+									onClick={external}
 									className="absolute right-5 top-5 cursor-pointer text-gray-500 hover:text-gray-700"
 								/>
 							)}

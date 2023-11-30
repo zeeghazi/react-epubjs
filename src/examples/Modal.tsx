@@ -3,6 +3,9 @@ import { Reader } from "src/Reader";
 import { ReaderProvider } from "src/providers/ReaderProvider";
 
 const Modal = () => {
+	const onClickExternal = () => {
+		console.log("External Link clicked");
+	};
 	return (
 		<ReaderProvider>
 			<div className="relative h-full w-full min-h-screen bg-stone-100 p-4">
@@ -11,7 +14,7 @@ const Modal = () => {
 					<Reader
 						showSidebar={false}
 						showToolbar={false}
-						externalLink="Some external link"
+						external={onClickExternal}
 					/>
 				</div>
 			</div>
