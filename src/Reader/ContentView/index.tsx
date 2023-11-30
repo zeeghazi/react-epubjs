@@ -103,7 +103,9 @@ function ContentView(props: IContentViewProps) {
 
 				currentRendition.off("locationChanged", handleLocationChanged);
 				currentRendition.off("selected", handleSelection);
+				// currentRendition.destroy()
 				console.log("Rendition was destroyed");
+				// no need to destroy as book.destroy() already does that
 			}
 		};
 	}, [rendition, handleKeyPress, handleLocationChanged, handleSelection]);

@@ -1,39 +1,48 @@
+// src/Reader/index.tsx
 import React, { useEffect } from "react";
 import { ReaderStyle as defaultStyles, type IReaderStyle } from "./style";
-import { Sidebar } from "../Sidebar";
-import { Drawer } from "../Drawer";
+import { Sidebar } from "./Sidebar";
 
 import ContentView from "./ContentView";
-import BookmarkToggle from "../components/BookmarkToggle";
-import FullScreenToggle from "../components/FullScreenToggle";
-import ThemeToggle from "../components/ThemeToggle";
-import ScrollToggle from "../components/ScrollToggle";
 
 import { useReader, useSidebar } from "src/hooks/useReaderContext";
 
 import { GoLinkExternal } from "react-icons/go";
+import { Toolbar } from "src/Reader/Toolbar";
+import { Drawer } from "./Drawer";
 
 export type IReaderProps = {
 	title?: string;
-	showSidebar?: boolean;
 	readerStyles?: IReaderStyle;
 
-	bookUrl: string;
-	initialFontSize?: string;
-	epubOptions?: Object;
+	bookUrl?: string;
+	// epubOptions?: Object;
 
-	modal: Boolean;
+	showSidebar?: boolean;
+	showToolbar?: Boolean;
+	externalLink?: string;
 };
 
-export const Reader = (props: IReaderProps) => {
+export const Reader: React.FC<IReaderProps> = ({
+	title = "Title",
+	readerStyles = defaultStyles,
+
+	bookUrl = "https://uncensoredgreatsebooks.s3.us-east-2.amazonaws.com/Benjamin_Franklin/Benjamin_Franklin@@The_Complete_Works_in_Philosophy,_Politics_and_Morals_of_the_late_Dr._Benjamin_Franklin,_Vol._1_[of_3].epub",
+
+	showSidebar = true,
+	showToolbar = true,
+	externalLink = "",
+}: IReaderProps) => {
 	const { url, setUrl, book, bookLocation } = useReader();
+
+	// bookLocation is used for Full Screen
 
 	const { sidebar } = useSidebar();
 
 	useEffect(() => {
 		if (url) return;
 
-		setUrl(props.bookUrl);
+		setUrl(bookUrl);
 
 		return () => {
 			try {
@@ -49,38 +58,16 @@ export const Reader = (props: IReaderProps) => {
 		};
 	}, []);
 
-	const {
-		title = "title",
-		readerStyles = defaultStyles,
-		modal = false,
-	} = props;
 	return (
 		<div className="md:aspect-video aspect-[3/4] w-full h-full flex gap-1 flex-col overflow-hidden">
-			{!modal && (
-				<div className="h-12 border border-stone-300 rounded flex justify-between items-center p-3 ">
-					<div className="flex-grow">
-						<h3 className="font-semibold text-lg capitalize">
-							{title}
-						</h3>
-					</div>
-					<div className="flex justify-between items-center gap-2">
-						<BookmarkToggle />
-						<FullScreenToggle />
-						<ThemeToggle />
-						<ScrollToggle />
-						{/* full screen */}
-						{/* theme */}
-						{/* reading direction */}
-					</div>
-				</div>
-			)}
-			<div className="flex w-full h-full gap-1">
-				{!modal && <Sidebar />}
+			{showToolbar && <Toolbar title={title} />}
+			<div className="flex w-full h-full gap-1" ref={bookLocation}>
+				{showSidebar && <Sidebar />}
 
 				<div className="flex-grow border border-stone-300 rounded">
 					<div style={readerStyles.container}>
-						<div style={readerStyles.readerArea} ref={bookLocation}>
-							{modal && (
+						<div style={readerStyles.readerArea}>
+							{externalLink && (
 								<GoLinkExternal
 									size={25}
 									onClick={() => alert("okay")}
@@ -89,7 +76,7 @@ export const Reader = (props: IReaderProps) => {
 							)}
 							<ContentView />
 						</div>
-						{!modal && sidebar && <Drawer />}
+						{showSidebar && sidebar && <Drawer />}
 					</div>
 				</div>
 			</div>

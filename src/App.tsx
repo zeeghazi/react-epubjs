@@ -1,6 +1,6 @@
 import React from "react";
-import Modal from "./pages/Modal";
-import FullPage from "./pages/FullPage";
+import Modal from "./examples/Modal";
+import FullPage from "./examples/FullPage";
 
 const App = () => {
 	// const Franklin =
